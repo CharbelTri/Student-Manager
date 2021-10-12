@@ -19,8 +19,10 @@ pipeline {
                 // bat "mvn -Dmaven.test.failure.ignore=true clean install"
             }
         }
-	stage('deploy'){
-		sh "mvn -Dmaven.test.failure.ignore=true clean install -Pdev"
-	}
+	    stage('deploy'){
+	        steps {
+	            sh "mvn -Dmaven.test.failure.ignore=true clean install -Pdev"
+	        }
+	    }
     }
 }
