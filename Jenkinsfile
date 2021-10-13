@@ -13,7 +13,7 @@ pipeline {
                 git 'https://github.com/CharbelTri/Student-Manager.git'
 
                 // Run Maven on a Unix agent.
-                sh "mvn -Dmaven.test.failure.ignore=true clean install -P{PROFILE}"
+                sh "mvn -Dmaven.test.failure.ignore=true clean install -P${PROFILE}"
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean install"
@@ -21,7 +21,7 @@ pipeline {
         }
 	    stage('deploy'){
 	        steps {
-	            sh "mvn -Dmaven.test.failure.ignore=true clean install -P{PROFILE}"
+	            sh "mvn -Dmaven.test.failure.ignore=true clean install -P${PROFILE}"
 	        }
 	    }
     }
